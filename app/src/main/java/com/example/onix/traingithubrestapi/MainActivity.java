@@ -1,6 +1,7 @@
 package com.example.onix.traingithubrestapi;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends Activity implements Callback<GithubUser> {
+
+    public final static String USER_NAME = "com.example.onix.com.example.onix.traingithubrestapi.USERNAME";
+    public final static String USER_ID = "com.example.onix.com.example.onix.traingithubrestapi.USERID";
+    public final static String USER_PUBLIC_REPOS = "com.example.onix.com.example.onix.traingithubrestapi.USERPUBLICREPOS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +49,16 @@ public class MainActivity extends Activity implements Callback<GithubUser> {
         int code = response.code();
         if (code == 200) {
             GithubUser user = response.body();
-            Toast.makeText(this, user.login + ", usuario con el id: " + user.id + " tiene " + user.public_repos + " repositorios publicos"
-                    , Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, ShowGithubUser.class);
+            String userName = user.name;
+            String userId = user.id;
+            String userPublicRepos = user.public_repos;
+            intent.putExtra(USER_ID, userId);
+            intent.putExtra(USER_NAME, userName);
+            intent.putExtra(USER_PUBLIC_REPOS, userPublicRepos);
+            startActivity(intent);
+            /*Toast.makeText(this, user.name + ", usuario con el id: " + user.id + " tiene " + user.public_repos + " repositorios publicos"
+                    , Toast.LENGTH_LONG).show();*/
         } else {
             Toast.makeText(this, "Wea didnt work", Toast.LENGTH_SHORT).show();
         }
@@ -55,4 +68,5 @@ public class MainActivity extends Activity implements Callback<GithubUser> {
     public void onFailure(Call<GithubUser> call, Throwable t) {
         Toast.makeText(this, "Nope", Toast.LENGTH_LONG).show();
     }
+
 }

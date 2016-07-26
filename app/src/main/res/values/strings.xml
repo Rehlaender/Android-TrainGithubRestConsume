@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Train GithubRestApi</string>
+    <string name="app_title">Get a Github User Info</string>
+    <string name="show_user_title">- Github user -</string>
+    <string name="id_text">ID:</string>
+    <string name="id_text_default">#id#</string>
+    <string name="name_text">Name:</string>
+    <string name="name_text_default">#name#</string>
+    <string name="public_repos_text">Public repos:</string>
+    <string name="public_repos_text_default">#public_repos#</string>
 </resources>
