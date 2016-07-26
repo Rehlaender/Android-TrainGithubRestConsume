@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -21,6 +22,8 @@ public class MainActivity extends Activity implements Callback<GithubUser> {
     public final static String USER_NAME = "com.example.onix.com.example.onix.traingithubrestapi.USERNAME";
     public final static String USER_ID = "com.example.onix.com.example.onix.traingithubrestapi.USERID";
     public final static String USER_PUBLIC_REPOS = "com.example.onix.com.example.onix.traingithubrestapi.USERPUBLICREPOS";
+
+    private EditText getUserName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,10 @@ public class MainActivity extends Activity implements Callback<GithubUser> {
 
         GithubUserAPI githubUserAPI = retrofit.create(GithubUserAPI.class);
 
-        Call<GithubUser> call = githubUserAPI.getUser("rehlaender");
+        getUserName = (EditText) findViewById(R.id.getUserName);
+        String find_user = getUserName.getText().toString().replaceAll("\\s","");
+
+        Call<GithubUser> call = githubUserAPI.getUser(find_user);
 
         call.enqueue(this);
     }
