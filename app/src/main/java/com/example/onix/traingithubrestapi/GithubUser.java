@@ -5,11 +5,13 @@ package com.example.onix.traingithubrestapi;
  */
 public class GithubUser {
 
+    String avatar_url;
     String id;
     String html_url;
     String login;
     String name;
     String public_repos;
+
 
 
     @Override

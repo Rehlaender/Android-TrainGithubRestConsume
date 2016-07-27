@@ -19,8 +19,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends Activity implements Callback<GithubUser> {
 
-    public final static String USER_NAME = "com.example.onix.com.example.onix.traingithubrestapi.USERNAME";
+    public final static String USER_AVATAR_URL = "com.example.onix.com.example.onix.traingithubrestapi.AVATARURL";
     public final static String USER_ID = "com.example.onix.com.example.onix.traingithubrestapi.USERID";
+    public final static String USER_LOGIN = "com.example.onix.com.example.onix.traingithubrestapi.LOGIN";
+    public final static String USER_NAME = "com.example.onix.com.example.onix.traingithubrestapi.USERNAME";
     public final static String USER_PUBLIC_REPOS = "com.example.onix.com.example.onix.traingithubrestapi.USERPUBLICREPOS";
 
     private EditText getUserName;
@@ -56,10 +58,14 @@ public class MainActivity extends Activity implements Callback<GithubUser> {
         if (code == 200) {
             GithubUser user = response.body();
             Intent intent = new Intent(this, ShowGithubUser.class);
-            String userName = user.name;
+            String userAvatrUrl = user.avatar_url;
             String userId = user.id;
+            String userLogin = user.login;
+            String userName = user.name;
             String userPublicRepos = user.public_repos;
+            intent.putExtra(USER_AVATAR_URL, userAvatrUrl);
             intent.putExtra(USER_ID, userId);
+            intent.putExtra(USER_LOGIN, userLogin);
             intent.putExtra(USER_NAME, userName);
             intent.putExtra(USER_PUBLIC_REPOS, userPublicRepos);
             startActivity(intent);
