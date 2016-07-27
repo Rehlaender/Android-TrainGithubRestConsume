@@ -2,13 +2,20 @@ package com.example.onix.traingithubrestapi;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ShowGithubUser extends Activity {
 
     private TextView  userAvatar, userId, userLogin, userName, userPrivateRepos;
+    ImageView userAvatarImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +27,8 @@ public class ShowGithubUser extends Activity {
         userLogin = (TextView) findViewById(R.id.login_get);
         userName = (TextView) findViewById(R.id.name_get);
         userPrivateRepos = (TextView) findViewById(R.id.public_repos_get);
+
+        userAvatarImg = (ImageView) findViewById(R.id.avatar_url_image);
 
         Intent intent = getIntent();
         String avatar_url = intent.getStringExtra(MainActivity.USER_AVATAR_URL);
@@ -33,6 +42,7 @@ public class ShowGithubUser extends Activity {
         userLogin.setText(login);
         userName.setText(name);
         userPrivateRepos.setText(public_repos);
-    }
 
+
+    }
 }

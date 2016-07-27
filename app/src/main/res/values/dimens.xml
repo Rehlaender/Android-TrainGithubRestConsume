@@ -5,4 +5,5 @@
     <dimen name="app_name_title">32sp</dimen>
     <dimen name="app_name_title_vertical_margin">10dp</dimen>
     <dimen name="user_fields_vertical_margin">5dp</dimen>
+    <dimen name="user_image_container_square">150dp</dimen>
 </resources>
