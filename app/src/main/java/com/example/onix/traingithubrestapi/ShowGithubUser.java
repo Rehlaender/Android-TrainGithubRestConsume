@@ -24,7 +24,7 @@ public class ShowGithubUser extends Activity {
         Intent intent = getIntent();
         String avatar_url = intent.getStringExtra(MainActivity.USER_AVATAR_URL);
         String id = intent.getStringExtra(MainActivity.USER_ID);
-        String login = intent.getStringExtra(MainActivity.USER_LOGIN);
+        String login = intent.getStringExtra(MainActivity.USER_LOGIN).toUpperCase();
         String name = intent.getStringExtra(MainActivity.USER_NAME);
         String public_repos = intent.getStringExtra(MainActivity.USER_PUBLIC_REPOS);
 

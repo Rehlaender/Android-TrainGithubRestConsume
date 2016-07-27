@@ -17,6 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/show_user_title"
+            android:layout_marginTop="@dimen/app_name_title_vertical_margin"
+            android:layout_marginBottom="@dimen/app_name_title_vertical_margin"
             android:textAlignment="center"
             android:textColor="@color/whiteColor"
             android:textSize="@dimen/app_name_title"
@@ -29,6 +31,8 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:layout_marginTop="@dimen/user_fields_vertical_margin"
+            android:layout_marginBottom="@dimen/user_fields_vertical_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -49,6 +53,8 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginTop="@dimen/user_fields_vertical_margin"
+            android:layout_marginBottom="@dimen/user_fields_vertical_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -70,6 +76,8 @@
 
 
         <LinearLayout
+            android:layout_marginTop="@dimen/user_fields_vertical_margin"
+            android:layout_marginBottom="@dimen/user_fields_vertical_margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -90,6 +98,8 @@
 
 
         <LinearLayout
+            android:layout_marginTop="@dimen/user_fields_vertical_margin"
+            android:layout_marginBottom="@dimen/user_fields_vertical_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
