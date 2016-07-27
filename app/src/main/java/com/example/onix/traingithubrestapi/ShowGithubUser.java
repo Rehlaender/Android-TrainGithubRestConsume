@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -42,6 +44,7 @@ public class ShowGithubUser extends Activity {
         userLogin.setText(login);
         userName.setText(name);
         userPrivateRepos.setText(public_repos);
-        
+
+        Picasso.with(this).load(avatar_url).into(userAvatarImg);
     }
 }
