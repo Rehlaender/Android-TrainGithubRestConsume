@@ -42,7 +42,6 @@ public class ShowGithubUser extends Activity {
         userLogin.setText(login);
         userName.setText(name);
         userPrivateRepos.setText(public_repos);
-
-
+        
     }
 }
