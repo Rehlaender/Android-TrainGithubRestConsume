@@ -63,16 +63,14 @@ public class MainActivity extends Activity implements Callback<GithubUser> {
             intent.putExtra(USER_NAME, userName);
             intent.putExtra(USER_PUBLIC_REPOS, userPublicRepos);
             startActivity(intent);
-            /*Toast.makeText(this, user.name + ", usuario con el id: " + user.id + " tiene " + user.public_repos + " repositorios publicos"
-                    , Toast.LENGTH_LONG).show();*/
         } else {
-            Toast.makeText(this, "Wea didnt work", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "That user doesn't exist", Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public void onFailure(Call<GithubUser> call, Throwable t) {
-        Toast.makeText(this, "Nope", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Connection error", Toast.LENGTH_LONG).show();
     }
 
 }
